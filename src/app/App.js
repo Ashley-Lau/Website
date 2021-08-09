@@ -1,9 +1,18 @@
 import './App.css';
+import Navbar from '../components/navigationBar/NavBar';
+import HomePage from '../homePage/HomePage';
+import AboutPage from '../aboutPage/AboutPage';
+import ProjectPage from '../projectsPage/ProjectPage';
+import ContactPage from '../contactPage/ContactPage';
 
-function App() {
+const App = () => {
   return (
-    <div className="App">
-      <p>Test application</p>
+    <div className="app">
+      <Navbar/>
+      <HomePage/>
+      <AboutPage/>
+      <ProjectPage/>
+      <ContactPage/>
     </div>
   );
 }

@@ -1,0 +1,119 @@
+/* Initial configuration of the header*/
+.nav-bar {
+    position: fixed;
+    top: 0;
+    display: flex;
+    width: 100vw;
+    height: clamp(50px, 7vh, 70px);
+    align-items: center;
+    justify-content: center;
+    z-index: 50;
+    flex-direction: row;
+    transition: all 0.5s ease;
+    padding-top: 1em;
+}
+
+.nav-bar-logo-container {
+    display: flex;
+    align-items: center;
+    width: 30%;
+}
+
+.nav-links-container {
+    display: flex;
+    justify-content: flex-end;
+    width: 55%;
+
+}
+
+.logo {
+    font-size: 2em;
+    color: white;
+    margin-right: -0.3em;
+}
+
+a {
+    list-style-type: none;
+    text-decoration: none;
+    padding-inline: 1.2em;
+    font-size: 1.2em;
+    color: white;
+    font-weight: 500;
+}
+
+.resize-logo {
+    display: none
+}
+
+/* New properties of header on scroll*/
+.nav-bar.sticky {
+    background-color: white;
+    padding-top: 0;
+    box-shadow: -1px -2px 17px 1px rgba(232, 238, 255, 1);
+}
+
+.logo.sticky {
+    color: black;
+}
+
+a.sticky {
+    color: black;
+}
+
+@media screen and (max-width: 960px) {
+    .nav-bar {
+        justify-content: unset;
+    }
+    .resize-logo {
+        display: unset;
+        font-size: 2em;
+        margin-right: 0.7em;
+        position: absolute;
+        right:10px;
+    }
+
+    .nav-bar-logo-container {
+        margin-left: 0.7em;
+        width: 150px;
+    }
+
+    .nav-links-container {
+        display: flex;
+        flex-direction: column;
+        width: 100%;
+        height: clamp(15em, 20em, 30em);
+        position: absolute;
+        top: clamp(50px + 1em, 7vh + 1em, 70px + 1em);
+        left: -100%;
+        opacity: 1;
+        transition: all 0.5s ease;
+        justify-content: space-evenly;
+    }
+
+    /* Property of menu when scrollY > 0 */
+    .nav-links-container.sticky {
+        background-color: white;
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1;
+        top: clamp(50px, 7vh, 70px);
+    }
+
+    /*Property of menu when scrollY = 0 */
+    .nav-links-container.active {
+        background-color: white;
+        left: 0;
+        opacity: 1;
+        transition: all 0.5s ease;
+        z-index: 1;
+    }
+
+    .nav-links-container a {
+        text-align: center;
+        padding: 1em;
+        width: 100%;
+        display: table;
+        color: black
+    }
+}
